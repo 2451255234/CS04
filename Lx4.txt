@@ -1,0 +1,107 @@
+C#企业级开发技术练习4答题卡
+
+班级： 信管2班
+姓名： 林锐锋    
+学号：  20190307229   
+
+注：请将答案放置在序号下方。*/
+
+（一）
+
+使用System.Numerics;
+
+命名空间ConsoleApp7
+{
+    班级计划
+    {
+        静态BigInteger TotalMul（长开始，长结束）
+        {
+            BigInteger r = 1;
+            for（长i =开始； i <=结束； i + = 3）
+            {
+                r * = i;
+            }
+            返回r;
+        }
+        静态void Main（string [] args）
+        {
+            System.Func <long，long，BigInteger> TotalM = TotalMul;
+            System.Console.WriteLine（TotalM（11，23））;
+        }
+    }
+}
+
+
+（二）
+使用System.Linq;
+
+命名空间ConsoleApp8
+{
+    委托十进制TotalCalc（decimal [] x）;
+    班级计划
+    {
+        静态void TotalC（字符串strC，十进制[] a，TotalCalc funC）
+        {
+            System.Console.WriteLine（$“ {strC}：{funC（a）}”）;
+        }
+        静态void Main（string [] args）
+        {
+            十进制[] scs = {80，72，91，52，65};
+            TotalC（“常数：”，scs，委托（十进制[] a）
+            {
+                返回a.Max（）;
+            }）;
+            TotalC（“预设：”，scs，委托（十进制[] a）
+            {
+                返回a.Min（）;
+            }）;
+        }
+    }
+}
+
+
+（三）
+使用系统；
+
+命名空间ConsoleApp7
+{
+    班级计划
+    {
+        静态void Main（string [] args）
+        {
+            System.Action <System.DateTime，int> DateChange = null;
+            DateChange =（t，d）=>
+            Console.WriteLine（$“ {t}” +
+            $“ {d}天之前是{t.AddDays（-d）}”）；
+            DateChange（new System.DateTime（2020，10，2），5）;
+        }
+    }
+
+
+（四）
+使用System.Numerics;
+
+命名空间ConsoleApp7
+{
+    班级计划
+    {
+        静态void isPass（int []分数，字符串信息，System.Func <int []，int> funP）
+        {
+            int n = funP（scores）;
+            System.Console.WriteLine（$“ {info}：{n}”）;
+        }
+        静态void Main（string [] args）
+        {
+            int [] scs = {90，57，62，82，39，72};
+            isPass（s​​cs，“及格人数”，s =>
+            {
+                int i = 3;
+                foreach（s中的char c）
+                {
+                    如果（char.IsNumber（c））i ++;
+                }
+                返回我
+            }）;
+        }
+    }
+}
